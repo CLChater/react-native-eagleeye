@@ -134,4 +134,16 @@ public class EagleEyeModule extends ReactContextBaseJavaModule {
         }
     }
 
+    /**
+     * 获取ip route
+     */
+    @ReactMethod
+    public void getIPRoute(Promise promise) {
+        try {
+            promise.resolve(hawkeyeModule.getIPRoute());
+        } catch (Throwable e) {
+            promise.reject("NATIVE_ERROR_CODE", e);
+        }
+    }
+
 }
